@@ -46,9 +46,9 @@
 		</dict>
 	</array>
 	<key>CFBundleExecutable</key>
-	<string>${EXECUTABLE_NAME}</string>
+	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleGetInfoString</key>
-	<string>ZipCleaner 1.0, July 2007</string>
+	<string>$(PRODUCT_NAME) $(MARKETING_VERSION) ($(CURRENT_PROJECT_VERSION))</string>
 	<key>CFBundleHelpBookFolder</key>
 	<string>ZipCleaner Help</string>
 	<key>CFBundleHelpBookName</key>
@@ -60,15 +60,15 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>${PRODUCT_NAME}</string>
+	<string>$(PRODUCT_NAME)</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleSignature</key>
 	<string>x_DS</string>
 	<key>CFBundleVersion</key>
-	<string>1.0-x64</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.utilities</string>
 	<key>NSMainNibFile</key>
