@@ -27,7 +27,7 @@ extern NSString *PREFwarnResourceFiles;
 extern NSString *PREFkeyDS_Store;
 extern NSString *PREFwarnDS_Store;
 extern NSString *PREFreportSuccess;
-extern int PREFshowProgressIndicatorBottomLimit;
+extern NSUInteger PREFshowProgressIndicatorBottomLimit;
 
 typedef enum default_pref_values {
     warnResourceFilesPrefValue = 1,

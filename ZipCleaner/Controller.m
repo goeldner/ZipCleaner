@@ -19,7 +19,7 @@ NSString *PREFwarnDS_Store = @"Warn about .DS_Store";
 NSString *PREFwarnResourceFiles = @"Warn about resource files";
 NSString *PREFkeyDS_Store = @"Key for resource files";
 NSString *PREFreportSuccess = @"Report successful removal";
-int PREFshowProgressIndicatorBottomLimit = 10;
+NSUInteger PREFshowProgressIndicatorBottomLimit = 10;
 
 @implementation Controller
 
@@ -126,7 +126,7 @@ int PREFshowProgressIndicatorBottomLimit = 10;
 	[openPanel setMessage: NSLocalizedString(@"Choose zip archives to clean.", nil)];
 	[openPanel setPrompt: NSLocalizedString(@"Clean", nil)];
 	[openPanel setAccessoryView: openPanelAccessoryView];
-    int result = [openPanel runModalForTypes: [NSArray arrayWithObjects: @"zip", NSFileTypeForHFSTypeCode('ZIP '), nil]];
+    NSInteger result = [openPanel runModalForTypes: [NSArray arrayWithObjects: @"zip", NSFileTypeForHFSTypeCode('ZIP '), nil]];
 
 	removeOnlyDS_Store = [removeWhatMatrix selectedTag];					// What did the user choose to remove?
 	[openPanelAccessoryView release];
@@ -173,7 +173,7 @@ int PREFshowProgressIndicatorBottomLimit = 10;
 	}
 	
 	// Determine whether or not to show the progressindicator and its length.
-	int fileTotal = [waitingList count] + [cleaningDetails count];
+	NSUInteger fileTotal = [waitingList count] + [cleaningDetails count];
 	if (fileTotal > PREFshowProgressIndicatorBottomLimit) {
 		[progressIndicator setMaxValue: (double) fileTotal];
 		[self setShowProgressIndicator: YES];
@@ -185,7 +185,7 @@ int PREFshowProgressIndicatorBottomLimit = 10;
 // This method takes an array of file paths, and examines each. If the path is a file, it is added to an array completeFileList. 
 // If it is a folder, the contents is added (examining it for other folders).
 	
-	int listLength = [fileList count];
+	NSUInteger listLength = [fileList count];
 	if (listLength == 0) {
 		return fileList;
 	}
@@ -432,7 +432,7 @@ int PREFshowProgressIndicatorBottomLimit = 10;
 // Depending on the preferences set, this method can show a warning about the files that will be removed from the archive.
 
 	NSAlert *alert;
-	int alertResult, requestedWarnings;
+	NSModalResponse alertResult, requestedWarnings;
 	
 	if (removeOnlyDS_Store) {
 		requestedWarnings = [prefWarnDS_Store intValue];
@@ -524,7 +524,7 @@ int PREFshowProgressIndicatorBottomLimit = 10;
 	[tempString replaceOccurrencesOfString: @"\0" withString: @"\n" options: NSLiteralSearch range: NSMakeRange(0, [tempString length])];
 
 	// Replace any text now occupying the details window, with the new information
-	int length = [[detailsTextView textStorage] length];
+	NSUInteger length = [[detailsTextView textStorage] length];
 	[detailsTextView replaceCharactersInRange: NSMakeRange(0,length) withString: tempString];
 	
 	// Scroll to the top of the scrollview, before showing it.
