@@ -131,7 +131,7 @@ NSUInteger PREFshowProgressIndicatorBottomLimit = 10;
 	removeOnlyDS_Store = [removeWhatMatrix selectedTag];					// What did the user choose to remove?
 	[openPanelAccessoryView release];
 
-	if (result == NSOKButton) {
+	if (result == NSModalResponseOK) {
 		[self setUpFiles:[openPanel filenames] removingOnlyDS_Store: removeOnlyDS_Store];
 	}
 	
@@ -363,7 +363,7 @@ NSUInteger PREFshowProgressIndicatorBottomLimit = 10;
 			[alert setInformativeText: [NSString stringWithString: NSLocalizedString(@"Finished cleaning text", nil)]];
 			[alert addButtonWithTitle: NSLocalizedString(@"Done", nil)];
 			[alert addButtonWithTitle: NSLocalizedString(@"Show details", nil)];
-			[alert setAlertStyle: NSWarningAlertStyle];
+			[alert setAlertStyle: NSAlertStyleWarning];
 
 			[alert beginSheetModalForWindow: nil modalDelegate:self didEndSelector:@selector(alertDidEnd:returnCode:contextInfo:) contextInfo:nil];
 		} else {
@@ -455,7 +455,7 @@ NSUInteger PREFshowProgressIndicatorBottomLimit = 10;
 				[alert setInformativeText: [NSString stringWithString: NSLocalizedString(@"Warning text resource files", nil)]];
 				[alert addButtonWithTitle: NSLocalizedString(@"Clear resource files", nil)];
 			}
-			[alert setAlertStyle: NSCriticalAlertStyle];
+			[alert setAlertStyle: NSAlertStyleCritical];
 			alertResult = [alert runModal];
 			[alert release];
 			break;
@@ -465,7 +465,7 @@ NSUInteger PREFshowProgressIndicatorBottomLimit = 10;
 			[alert setInformativeText: [NSString stringWithString: NSLocalizedString(@"Warning text resource files", nil)]];
 			[alert addButtonWithTitle: NSLocalizedString(@"Cancel", nil)];
 			[alert addButtonWithTitle: NSLocalizedString(@"Clear resource forks", nil)];
-			[alert setAlertStyle: NSCriticalAlertStyle];
+			[alert setAlertStyle: NSAlertStyleCritical];
 			alertResult = [alert runModal];
 			[alert release];
 			break;
