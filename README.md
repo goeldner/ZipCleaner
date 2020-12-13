@@ -5,6 +5,8 @@
 This is a recompilation of the original ZipCleaner tool by Roger Jolly – maintained to be
 runnable on latest macOS versions.
 
+ZipCleaner removes .DS_Store files and other resource information from zip archives.
+
 ## About
 
 You might know and love the ZipCleaner tool, which was developed by Roger Jolly and
@@ -20,7 +22,7 @@ From the original help file:
 
 Starting with macOS Catalina (version 10.15), ZipCleaner could could not be used any
 more, because it is available as 32-bit version only and Apple decided to only allow
-64-bit software any more. Unfortunately, there is now new version available from Roger
+64-bit software any more. Unfortunately, there is no new version available from Roger
 Jolly since the initial release of version 1.0 in the year 2007. So I decided to take the
 original source code and recompile it as 64-bit application with latest Xcode version.
 
@@ -33,8 +35,13 @@ Released versions can be found here: https://github.com/goeldner/ZipCleaner/rele
 
 The app is notarized by Apple.
 
-In order to install, just download the latest DMG file, open it and drag ZipCleaner.app
-into the Applications folder. Then you can start ZipCleaner from Applications folder.
+## Installation
+
+In order to install, just download and open the latest DMG file, then drag ZipCleaner.app
+into the Applications folder.
+
+You can start ZipCleaner from Applications folder. I keep it pinned to the dock. Zip
+files can just be dragged onto the icon inside the dock and cleaning starts automatically.
 
 ## Disclaimer
 
